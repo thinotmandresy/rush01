@@ -6,13 +6,14 @@
 /*   By: amandres <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/22 19:28:03 by amandres          #+#    #+#             */
-/*   Updated: 2026/11/22 19:50:13 by amandres         ###   ########.fr       */
+/*   Updated: 2026/11/22 19:56:01 by amandres         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 void	ft_putchar(char c);
 int		error(void);
 int		count_clues(char *clues);
+int		run(char *clues, int n);
 
 int	main(int argc, char *argv[])
 {
@@ -27,17 +28,7 @@ int	main(int argc, char *argv[])
 	n = nb_clues / 4;
 	if (n < 1 || n > 9)
 		return (error());
-	ft_putchar('S');
-	ft_putchar('k');
-	ft_putchar('y');
-	ft_putchar('s');
-	ft_putchar('c');
-	ft_putchar('r');
-	ft_putchar('a');
-	ft_putchar('p');
-	ft_putchar('e');
-	ft_putchar('r');
-	ft_putchar('s');
-	ft_putchar('\n');
+	if (!run(argv[1], n))
+		return (error());
 	return (0);
 }
