@@ -6,7 +6,7 @@
 /*   By: amandres <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/22 19:44:51 by amandres          #+#    #+#             */
-/*   Updated: 2026/11/22 20:33:38 by amandres         ###   ########.fr       */
+/*   Updated: 2026/11/22 21:46:24 by amandres         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -126,7 +126,7 @@ int	check_clues(int **grid, int **clues, int row, int col)
 	{
 		if (check_col(grid, col, n, 1) != clues[0][col])
 			return (0);
-		if (check_col(grid, col, n, -1) != clues[0][col])
+		if (check_col(grid, col, n, -1) != clues[1][col])
 			return (0);
 	}
 	return (1);
