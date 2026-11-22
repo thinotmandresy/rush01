@@ -6,7 +6,7 @@
 /*   By: amandres <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/22 19:44:51 by amandres          #+#    #+#             */
-/*   Updated: 2026/11/22 20:12:23 by amandres         ###   ########.fr       */
+/*   Updated: 2026/11/22 20:33:38 by amandres         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,4 +54,96 @@ int	fill_clues(int **clues, char *raw_clues, int n)
 		side++;
 	}
 	return (1);
+}
+
+int	check_row(int **grid, int row, int n, int direction)
+{
+	int	i;
+	int	max;
+	int	seen;
+
+	i = 0;
+	max = 0;
+	seen = 0;
+	if (direction == -1)
+		i = n - 1;
+	while (1)
+	{
+		if (direction == 1 && i >= n)
+			break ;
+		if (direction == -1 && i == -1)
+			break ;
+		if (grid[row][i] > max)
+		{
+			max = grid[row][i];
+			seen++;
+		}
+		i = i + direction;
+	}
+	return (seen);
+}
+
+int	check_col(int **grid, int col, int n, int direction)
+{
+	int	i;
+	int	max;
+	int	seen;
+
+	i = 0;
+	max = 0;
+	seen = 0;
+	if (direction == -1)
+		i = n - 1;
+	while (1)
+	{
+		if (direction == 1 && i >= n)
+			break ;
+		if (direction == -1 && i == -1)
+			break ;
+		if (grid[i][col] > max)
+		{
+			max = grid[i][col];
+			seen++;
+		}
+		i = i + direction;
+	}
+	return (seen);
+}
+
+int	check_clues(int **grid, int **clues, int row, int col)
+{
+	int	n;
+
+	n = clues[4][0];
+	if (col == n - 1)
+	{
+		if (check_row(grid, row, n, 1) != clues[2][row])
+			return (0);
+		if (check_row(grid, row, n, -1) != clues[3][row])
+			return (0);
+	}
+	if (row == n - 1)
+	{
+		if (check_col(grid, col, n, 1) != clues[0][col])
+			return (0);
+		if (check_col(grid, col, n, -1) != clues[0][col])
+			return (0);
+	}
+	return (1);
+}
+
+int	fits(int **grid, int **clues, int row, int col)
+{
+	int	i;
+
+	i = 0;
+	while (i < clues[4][0])
+	{
+		if (i != col && grid[row][i] == grid[row][col])
+			return (0);
+		if (i != col && grid[i][col] == grid[row][col])
+			return (0);
+		i++;
+	}
+	return (check_clues(grid, clues, row, col));
 }
