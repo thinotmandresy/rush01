@@ -6,13 +6,13 @@
 /*   By: amandres <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/22 19:53:59 by amandres          #+#    #+#             */
-/*   Updated: 2026/11/22 19:54:42 by amandres         ###   ########.fr       */
+/*   Updated: 2026/11/22 20:13:02 by amandres         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	run(char *clues, int n)
+int	run(char *raw_clues, int n)
 {
-	(void)clues;
+	(void)raw_clues;
 	(void)n;
 	return (1);
 }

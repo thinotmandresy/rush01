@@ -6,28 +6,28 @@
 /*   By: amandres <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/22 19:44:51 by amandres          #+#    #+#             */
-/*   Updated: 2026/11/22 20:10:26 by amandres         ###   ########.fr       */
+/*   Updated: 2026/11/22 20:12:23 by amandres         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	count_clues(char *clues)
+int	count_clues(char *raw_clues)
 {
 	int	count;
 
 	count = 0;
-	while (*clues)
+	while (*raw_clues)
 	{
-		if (*clues == ' ')
+		if (*raw_clues == ' ')
 		{
-			clues++;
+			raw_clues++;
 			continue ;
 		}
-		if (*clues < '1' || *clues > '9')
+		if (*raw_clues < '1' || *raw_clues > '9')
 			return (-1);
-		if (*(clues + 1) >= '0' && *(clues + 1) <= '9')
+		if (*(raw_clues + 1) >= '0' && *(raw_clues + 1) <= '9')
 			return (-1);
 		count++;
-		clues++;
+		raw_clues++;
 	}
 	return (count);
 }
