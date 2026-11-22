@@ -6,7 +6,7 @@
 /*   By: amandres <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/22 19:44:51 by amandres          #+#    #+#             */
-/*   Updated: 2026/11/22 21:46:24 by amandres         ###   ########.fr       */
+/*   Updated: 2026/11/22 21:47:21 by amandres         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -141,7 +141,7 @@ int	fits(int **grid, int **clues, int row, int col)
 	{
 		if (i != col && grid[row][i] == grid[row][col])
 			return (0);
-		if (i != col && grid[i][col] == grid[row][col])
+		if (i != row && grid[i][col] == grid[row][col])
 			return (0);
 		i++;
 	}
