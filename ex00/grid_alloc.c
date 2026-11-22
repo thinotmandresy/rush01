@@ -6,7 +6,7 @@
 /*   By: amandres <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/22 19:33:13 by amandres          #+#    #+#             */
-/*   Updated: 2026/11/22 19:36:46 by amandres         ###   ########.fr       */
+/*   Updated: 2026/11/22 19:51:27 by amandres         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,7 @@ int	**alloc_grid(int rows, int cols)
 	int	j;
 
 	i = 0;
-	j = 0;
-	grid = malloc(rows * sizeof(int*));
+	grid = malloc(rows * sizeof(int *));
 	if (!grid)
 		return (0);
 	while (i < rows)
