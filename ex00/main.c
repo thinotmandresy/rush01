@@ -6,11 +6,10 @@
 /*   By: amandres <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/22 19:28:03 by amandres          #+#    #+#             */
-/*   Updated: 2026/11/22 19:56:01 by amandres         ###   ########.fr       */
+/*   Updated: 2026/11/22 21:40:43 by amandres         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_putchar(char c);
 int		error(void);
 int		count_clues(char *clues);
 int		run(char *clues, int n);
