@@ -6,13 +6,28 @@
 /*   By: amandres <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/22 20:42:56 by amandres          #+#    #+#             */
-/*   Updated: 2026/11/22 21:28:47 by amandres         ###   ########.fr       */
+/*   Updated: 2026/11/22 21:52:13 by amandres         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	is_valid(int **grid, int n, int row, int col);
 int	check_clues(int **grid, int **clues, int row, int col);
-int	fits(int **grid, int **clues, int row, int col);
+
+int	fits(int **grid, int **clues, int row, int col)
+{
+	int	i;
+
+	i = 0;
+	while (i < clues[4][0])
+	{
+		if (i != col && grid[row][i] == grid[row][col])
+			return (0);
+		if (i != row && grid[i][col] == grid[row][col])
+			return (0);
+		i++;
+	}
+	return (check_clues(grid, clues, row, col));
+}
 
 int	solve(int **grid, int **clues, int row, int col)
 {
